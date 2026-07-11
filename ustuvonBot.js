@@ -564,7 +564,6 @@ bot.start((ctx) => {
     bot.action("start_test", (ctx) => {
         ctx.reply("📋 Test boshlandi✅\n\n1-savol: " + frontendQuestions[0].question + "\n\n" + frontendQuestions[0].options.map((option, index) => `${index + 1}. ${option}`).join("\n"));
         users[userId].step = 2;
-        ctx.answerCbQuery();
     });
 });
 
