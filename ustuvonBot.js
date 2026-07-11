@@ -1,19 +1,14 @@
 require("dotenv").config();
 
-
-const { Telegraf, Markup } = require("telegraf");
-
+const { Telegraf } = require("telegraf");
 const projects = require("./projects");
 
-
-const bot = new Telegraf(
-    process.env.BOT_TOKEN
-);
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 
+// Nomzodlar
 
 const users = [
-
     {
         id: 8396840695,
         name: "John Doe",
@@ -27,75 +22,72 @@ const users = [
 ];
 
 
-
-// admin tekshirish
+// Admin tekshirish
 
 function isAdmin(ctx) {
-
-    return ctx.from.id == process.env.ADMIN_ID;
-
+    return ctx.from.id === Number(process.env.ADMIN_ID);
 }
 
 
-bot.start((ctx) => {
-    
+// Bot ishga tushganda
+
+bot.start((ctx)=>{
+
     ctx.reply(
-        "Bot ishlamoqda ✅"
+        "✅ Bot ishlamoqda"
     );
-    
-    Markup.inlineKeyboard([
-        Markup.button.callback("Send Projects", "send_projects"
-        )
-    ]);
+
 });
-// loyiha yuborish
-
-bot.command("send_projects", async (ctx) => {
-
-
-    if (!isAdmin(ctx)) {
-        return ctx.reply("❌ Ruxsat yo'q");
-    }
 
 
 
-    for (const user of users) {
+// Loyiha yuborish
+
+async function sendProjects(ctx){
 
 
-        let list = projects[user.profession];
+    for(const user of users){
 
-        
-        if (!list) {
-            continue;
-        }
 
-        
+        try{
 
-        let project =
+
+            const list = projects[user.profession];
+
+
+            if(!list){
+
+                console.log(
+                    "Loyiha topilmadi:",
+                    user.profession
+                );
+
+                continue;
+            }
+
+
+
+            const project =
             list[
-            Math.floor(
-                Math.random() * list.length
-            )
+                Math.floor(
+                    Math.random() * list.length
+                )
             ];
 
 
 
-        let message = `
-
-👋 Assalomu alaykum ${user.name}!
-
+            const message = 
+`
+👋 Assalomu alaykum ${user.name}
 
 🎯 Siz keyingi bosqichga o'tdingiz.
 
-
 🚀 Sizga berilgan loyiha:
 
-
-${project.title}
+📌 ${project.title}
 
 
 ${project.text}
-
 
 
 ⏰ Muddat:
@@ -104,20 +96,16 @@ ${project.text}
 
 Tayyor bo'lgach GitHub link yuboring.
 
-
 Omad! 🔥
-
 `;
 
-
-
-        try {
 
 
             await bot.telegram.sendMessage(
                 user.id,
                 message
             );
+
 
 
             console.log(
@@ -128,24 +116,44 @@ Omad! 🔥
 
         }
 
-        catch (error) {
+        catch(error){
 
             console.log(
-                "Xato:",
+                "XATO:",
                 user.id,
                 error.message
             );
 
         }
 
+    }
+
+
+    ctx.reply(
+        "✅ Loyihalar yuborildi"
+    );
+
+}
+
+
+
+// Admin komandasi
+
+bot.command(
+"send_projects",
+async(ctx)=>{
+
+
+    if(!isAdmin(ctx)){
+
+        return ctx.reply(
+            "❌ Siz admin emassiz"
+        );
 
     }
 
 
-
-    ctx.reply(
-        "✅ Barcha loyihalar yuborildi"
-    );
+    await sendProjects(ctx);
 
 
 });
@@ -153,16 +161,25 @@ Omad! 🔥
 
 
 
+// Xatolar
+
+bot.catch((err)=>{
+
+    console.log(
+        "BOT XATO:",
+        err
+    );
+
+});
 
 
 
 
-
+// Ishga tushirish
 
 bot.launch();
 
 
-
 console.log(
-    "Bot ishga tushdi..."
+    "🚀 Bot ishga tushdi"
 );
