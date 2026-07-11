@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-import Markup from "telegraf/markup";
 
 const { Telegraf, Markup } = require("telegraf");
 
