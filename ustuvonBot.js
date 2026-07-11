@@ -16,7 +16,7 @@ const users = [
     {
         id: 8396840695,
         name: "John Doe",
-        profession: "backend"
+        profession: "frontend"
     },
     {
         id: 8099181223,
