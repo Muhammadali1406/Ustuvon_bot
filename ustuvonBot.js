@@ -151,6 +151,8 @@ ${project.text}
 Tayyor bo'lgach GitHub link yuboring.
 
 Omad! 🔥
+
+Agar qayergadir tushunmasangiz @muhammadali_1406 ga yozing!
 `;
 
 
