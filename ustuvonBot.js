@@ -139,25 +139,7 @@ async function sendProjects(ctx){
 `
 👋 Assalomu alaykum ${user.name}
 
-🎯 Siz keyingi bosqichga o'tdingiz.
-
-🚀 Sizga berilgan loyiha:
-
-📌 ${project.title}
-
-
-${project.text}
-
-
-⏰ Muddat:
-48 soat
-
-
-Tayyor bo'lgach GitHub link yuboring.
-
-Omad! 🔥
-
-Agar qayergadir tushunmasangiz @muhammadali_1406 ga yozing!
+github linkini @muhammadali_1406 ga yuboring! ism familyangiz bilan botdagi xabarni screenshot qilib yuboring!
 `;
 
 
