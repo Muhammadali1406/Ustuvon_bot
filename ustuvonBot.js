@@ -139,7 +139,7 @@ async function sendProjects(ctx){
 `
 👋 Assalomu alaykum ${user.name}
 
-Qatnashuvchilarga eslatma sizga berilgan 48 soat vaqt tugadi ulgimay qolgan bo'lsangiz afsusdamiz loyihani o'z vaqtida topshirganlar sizlarga omad tilab qolamiz!
+Sizga berilgan 48 soat vaqt tugadi ulgimay qolgan bo'lsangiz afsusdamiz loyihani o'z vaqtida topshirganlar sizlarga omad tilab qolamiz!
 `;
 
 
