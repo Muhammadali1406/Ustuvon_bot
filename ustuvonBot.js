@@ -139,7 +139,7 @@ async function sendProjects(ctx){
 `
 👋 Assalomu alaykum ${user.name}
 
-github linkini @muhammadali_1406 ga yuboring! ism familyangiz bilan botdagi xabarni screenshot qilib yuboring!
+Qatnashuvchilarga eslatma sizga berilgan 48 soat vaqt tugadi ulgimay qolgan bo'lsangiz afsusdamiz loyihani o'z vaqtida topshirganlar sizlarga omad tilab qolamiz!
 `;
 
 
