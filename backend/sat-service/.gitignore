@@ -1,0 +1,89 @@
+# ==========================================
+# 1. Environment Secrets & Sensitive Data
+# ==========================================
+.env
+.env.local
+.env.*.local
+*.env
+*.pem
+*.key
+*.secret
+credentials.json
+Id_rsa
+
+# ==========================================
+# 2. Package Managers & Dependencies
+# ==========================================
+node_modules/
+jspm_packages/
+bower_components/
+.venv/
+myenv/
+venv/
+ENV/
+env/
+.tox/
+.pytest_cache/
+vendor/
+.pnpm-store/
+
+# ==========================================
+# 3. Common Build Outputs & Artifacts
+# ==========================================
+dist/
+build/
+out/
+bin/
+obj/
+*.exe
+*.dll
+*.so
+*.dylib
+*.class
+*.jar
+*.war
+*.pyc
+*.pyo
+__pycache__/
+
+# ==========================================
+# 4. IDEs and Code Editors
+# ==========================================
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+*.code-workspace
+
+# IntelliJ / WebStorm / PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Xcode
+build/
+DerivedData/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+
+# OS Metadata
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==========================================
+# 5. Logs and Diagnostic Files
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.stylelintcache
